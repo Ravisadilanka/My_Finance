@@ -5,7 +5,7 @@ import profileImg from '../assets/profile.jpeg'
 
 const Header = () => {
   return (
-    <div className="h-15 flex justify-between text-center py-5 px-5">
+    <div className="h-15 flex justify-between text-center py-4 px-6">
       <h1 className="font-playwrite font-bold text-2xl text-darkBlue">My Finance</h1>
       <div className="flex gap-4">
          <button className="px-3 bg-lightPurple rounded-lg">
