@@ -22,7 +22,7 @@ const Sidemenu = () => {
   return (
     <div className="h-screen w-60 flex-col pr-5 bg-darkBlue">
       <div className="flex align-middle border-b-2 border-white items-center py-7 ">
-        <div className={`w-56 flex gap-6 px-5 py-3 cursor-pointer rounded-tr-3xl ${select === "dashboard" ? "text-darkBlue bg-white" : "text-white"}`} onClick={() => handleItemClick("/", "dashboard")}>
+        <div className={`w-56 flex gap-6 px-5 py-3 cursor-pointer rounded-tr-3xl ${select === "dashboard" ? "text-lightGreen bg-white" : "text-white"}`} onClick={() => handleItemClick("/", "dashboard")}>
         <MdDashboard className="text-xl" />
         <p className="text-sm font-medium">Dashboard</p>
         </div>
@@ -32,7 +32,7 @@ const Sidemenu = () => {
         <ul>
           <li
             className={`px-5 flex gap-6 py-3 cursor-pointer items-center rounded-tr-3xl ${
-              select === "advisorSettings" ? "text-darkBlue bg-white" : "text-white"
+              select === "advisorSettings" ? "text-lightGreen bg-white" : "text-white"
             }`}
             onClick={() => handleItemClick("/", "advisorSettings")}
           >
@@ -41,7 +41,7 @@ const Sidemenu = () => {
           </li>
           <li
             className={`px-5 flex gap-6 py-3 cursor-pointer items-center rounded-tr-3xl ${
-              select === "email" ? "text-darkBlue bg-white" : "text-white"
+              select === "email" ? "text-lightGreen bg-white" : "text-white"
             }`}
             onClick={() => handleItemClick("/", "email")}
           >
@@ -50,7 +50,7 @@ const Sidemenu = () => {
           </li>
           <li
             className={`px-5 flex gap-6 py-3 cursor-pointer items-center rounded-tr-3xl ${
-              select === "emailTemplates" ? "text-darkBlue bg-white" : "text-white"
+              select === "emailTemplates" ? "text-lightGreen bg-white" : "text-white"
             }`}
             onClick={() => handleItemClick("/email-templates", "emailTemplates")}
           >
@@ -59,7 +59,7 @@ const Sidemenu = () => {
           </li>
           <li
             className={`px-5 flex gap-6 py-3 cursor-pointer items-center rounded-tr-3xl ${
-              select === "promoCodes" ? "text-darkBlue bg-white" : "text-white"
+              select === "promoCodes" ? "text-lightGreen bg-white" : "text-white"
             }`}
             onClick={() => handleItemClick("/promo-codes", "promoCodes")}
           >
@@ -68,7 +68,7 @@ const Sidemenu = () => {
           </li>
           <li
             className={`px-5 flex gap-6 py-3 cursor-pointer items-center rounded-tr-3xl ${
-              select === "wordTemplates" ? "text-darkBlue bg-white" : "text-white"
+              select === "wordTemplates" ? "text-lightGreen bg-white" : "text-white"
             }`}
             onClick={() => handleItemClick("/word-templates", "wordTemplates")}
           >
@@ -77,7 +77,7 @@ const Sidemenu = () => {
           </li>
           <li
             className={`px-5 flex gap-6 py-3 cursor-pointer items-center rounded-tr-3xl ${
-              select === "superannuation" ? "text-darkBlue bg-white" : "text-white"
+              select === "superannuation" ? "text-lightGreen bg-white" : "text-white"
             }`}
             onClick={() => handleItemClick("/superannuation", "superannuation")}
           >
@@ -86,7 +86,7 @@ const Sidemenu = () => {
           </li>
           <li
             className={`px-5 flex gap-6 py-3 cursor-pointer items-center rounded-tr-3xl ${
-              select === "subscriptions" ? "text-darkBlue bg-white" : "text-white"
+              select === "subscriptions" ? "text-lightGreen bg-white" : "text-white"
             }`}
             onClick={() => handleItemClick("/subscriptions", "subscriptions")}
           >
@@ -95,7 +95,7 @@ const Sidemenu = () => {
           </li>
           <li
             className={`px-5 flex gap-6 py-3 cursor-pointer items-center rounded-tr-3xl ${
-              select === "paymentHistory" ? "text-darkBlue bg-white" : "text-white"
+              select === "paymentHistory" ? "text-lightGreen bg-white" : "text-white"
             }`}
             onClick={() => handleItemClick("/payment-history", "paymentHistory")}
           >
@@ -104,7 +104,7 @@ const Sidemenu = () => {
           </li>
           <li
             className={`px-5 flex gap-6 py-3 cursor-pointer items-center rounded-tr-3xl ${
-              select === "notification" ? "text-darkBlue bg-white" : "text-white"
+              select === "notification" ? "text-lightGreen bg-white" : "text-white"
             }`}
             onClick={() => handleItemClick("/notification", "notification")}
           >
