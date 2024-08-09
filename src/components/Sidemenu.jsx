@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { MdDashboard } from "react-icons/md";
 import { IoSettingsOutline } from "react-icons/io5";
 import { BiMessageAltDetail } from "react-icons/bi";
@@ -8,10 +8,52 @@ import { AiOutlineDollar } from "react-icons/ai";
 import { FiServer } from "react-icons/fi";
 import { TbAbacus } from "react-icons/tb";
 import { TbNotification } from "react-icons/tb";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const Sidemenu = () => {
-  const [select, setSelect] = useState("dashboard");
+  const location = useLocation();
+  const [select, setSelect] = useState("");
+
+  useEffect(() => {
+    const path = location.pathname;
+
+    switch (path) {
+      case "/":
+        setSelect("dashboard");
+        break;
+      case "/advisor-settings":
+        setSelect("advisorSettings");
+        break;
+      case "/email":
+        setSelect("email");
+        break;
+      case "/email-templates":
+        setSelect("emailTemplates");
+        break;
+      case "/promo-codes":
+        setSelect("promoCodes");
+        break;
+      case "/word-templates":
+        setSelect("wordTemplates");
+        break;
+      case "/superannuation":
+        setSelect("superannuation");
+        break;
+      case "/subscriptions":
+        setSelect("subscriptions");
+        break;
+      case "/payment-history":
+        setSelect("paymentHistory");
+        break;
+      case "/notification":
+        setSelect("notification");
+        break;
+      default:
+        setSelect("");
+        break;
+    }
+  }, [location]);
+
   const navigate = useNavigate();
 
   const handleItemClick = (path, item) => {
@@ -22,11 +64,15 @@ const Sidemenu = () => {
   return (
     <div className="h-screen w-60 flex-col pr-5 bg-darkBlue">
       <div className="flex align-middle border-b-2 border-white items-center py-7 ">
-        <div className={`w-56 flex gap-6 px-5 py-3 cursor-pointer rounded-tr-3xl ${select === "dashboard" ? "text-lightGreen bg-white" : "text-white"}`} onClick={() => handleItemClick("/", "dashboard")}>
-        <MdDashboard className="text-xl" />
-        <p className="text-sm font-medium">Dashboard</p>
+        <div
+          className={`w-56 flex gap-6 px-5 py-3 cursor-pointer rounded-tr-3xl ${
+            select === "dashboard" ? "text-lightGreen bg-white" : "text-white"
+          }`}
+          onClick={() => handleItemClick("/", "dashboard")}
+        >
+          <MdDashboard className="text-xl" />
+          <p className="text-sm font-medium">Dashboard</p>
         </div>
-        
       </div>
       <div className="py-7">
         <ul>
@@ -34,7 +80,7 @@ const Sidemenu = () => {
             className={`px-5 flex gap-6 py-3 cursor-pointer items-center rounded-tr-3xl ${
               select === "advisorSettings" ? "text-lightGreen bg-white" : "text-white"
             }`}
-            onClick={() => handleItemClick("/", "advisorSettings")}
+            onClick={() => handleItemClick("/advisor-settings", "advisorSettings")}
           >
             <IoSettingsOutline className="text-xl" />
             <p className="text-sm font-medium">Advisor Settings</p>
@@ -43,7 +89,7 @@ const Sidemenu = () => {
             className={`px-5 flex gap-6 py-3 cursor-pointer items-center rounded-tr-3xl ${
               select === "email" ? "text-lightGreen bg-white" : "text-white"
             }`}
-            onClick={() => handleItemClick("/", "email")}
+            onClick={() => handleItemClick("/email", "email")}
           >
             <BiMessageAltDetail className="text-xl" />
             <p className="text-sm font-medium">Email</p>
@@ -54,7 +100,7 @@ const Sidemenu = () => {
             }`}
             onClick={() => handleItemClick("/email-templates", "emailTemplates")}
           >
-            <BiMessageAltDetail className="text-xl" />
+            <TbTemplate className="text-xl" />
             <p className="text-sm font-medium">Email Templates</p>
           </li>
           <li
