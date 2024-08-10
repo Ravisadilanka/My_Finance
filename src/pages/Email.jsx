@@ -66,7 +66,7 @@ const Email = () => {
         <Sidemenu />
         <div className="flex flex-col w-full h-full bg-lightBlue p-5 gap-5">
           <div className="bg-white flex justify-between p-5 rounded-xl items-center">
-            <h1>Bulk Email</h1>
+            <h1 className="text-lg font-bold">Bulk Email</h1>
             <button className="flex gap-3 items-center border-2 border-lightBlue py-1 px-2 rounded-lg">
               <IoArrowBackCircleOutline className="text-3xl text-lightGreen" />
               <p className="text-sm font-semibold">Back</p>
