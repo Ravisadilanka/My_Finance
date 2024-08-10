@@ -18,7 +18,7 @@ const Sidemenu = () => {
     const path = location.pathname;
 
     switch (path) {
-      case "/":
+      case "/dashboard":
         setSelect("dashboard");
         break;
       case "/advisor-settings":
@@ -68,7 +68,7 @@ const Sidemenu = () => {
           className={`w-56 flex gap-6 px-5 py-3 cursor-pointer rounded-tr-3xl ${
             select === "dashboard" ? "text-lightGreen bg-white" : "text-white"
           }`}
-          onClick={() => handleItemClick("/", "dashboard")}
+          onClick={() => handleItemClick("/dashboard", "dashboard")}
         >
           <MdDashboard className="text-xl" />
           <p className="text-sm font-medium">Dashboard</p>
