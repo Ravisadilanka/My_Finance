@@ -20,7 +20,7 @@ const AdvisorSettings = () => {
   return (
     <div className="flex flex-col">
       <Header />
-      <div className="flex">
+      <div className="flex h-screen">
         <Sidemenu />
         <div className="flex flex-col px-5 pb-5 bg-lightBlue w-full gap-4">
           <div className="bg-white flex text-sm gap-4 pl-4 pb-4 pr-4 rounded-bl-xl rounded-br-xl">
