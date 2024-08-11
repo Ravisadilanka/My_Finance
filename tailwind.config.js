@@ -18,6 +18,9 @@ module.exports = {
         lightGreen: "#1AC598",
         buttonBlue: "#2196F3",
       },
+      screens: {
+        'xs': '480px',
+      },
     },
   },
   plugins: [],

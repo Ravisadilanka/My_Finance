@@ -14,7 +14,7 @@ import { FaBars } from "react-icons/fa";
 
 const Home = () => {
   const [date, setDate] = useState(new Date());
-  const [isSidemenuOpen, setIsSidemenuOpen] = useState(false);
+  const [isSidemenuOpen, setIsSidemenuOpen] = useState(true);
 
   function toggleSidemenu() {
     setIsSidemenuOpen(!isSidemenuOpen);
@@ -36,66 +36,66 @@ const Home = () => {
           <Sidemenu />
         </div>
 
-        <div className={isSidemenuOpen ? "bg-lightBlue flex w-full px-5 py-5" : "hidden md:block"}>
-          <div className="flex flex-col w-3/4 gap-4">
-            <div className="flex gap-4 h-1/3">
+        <div className={isSidemenuOpen ? "bg-lightBlue flex flex-col md:flex-row w-full px-5 py-5 gap-5 md:gap-0" : "hidden md:block"}>
+          <div className="flex flex-col md:w-3/4 gap-4">
+            <div className="flex flex-col gap-4 xs:grid xs:grid-cols-3 md:h-1/3">
               <div className="flex-col bg-white rounded-xl w-full">
-                <div className="flex gap-4 border-b-2 border-gray px-5 py-5 items-center">
-                  <h1 className="text-lightGreen font-bold text-5xl">24</h1>
+                <div className="flex gap-4 border-b-2 border-gray p-5 items-center">
+                  <h1 className="text-lightGreen font-bold md:text-5xl">24</h1>
                   <p className="text-sm">Total Advisors</p>
                 </div>
-                <div className="flex gap-20 px-5 py-4">
+                <div className="flex justify-between px-5 py-4">
                   <div className="flex-col">
-                    <h2 className="text-blue-800 text-3xl font-bold pb-2">
+                    <h2 className="text-blue-800 md:text-3xl font-bold pb-2">
                       24
                     </h2>
-                    <p className="text-gray-500 text-sm">ACTIVE</p>
+                    <p className="text-gray-500 text-xs sm:text-sm">ACTIVE</p>
                   </div>
                   <div className="flex flex-col items-end">
-                    <h2 className="text-red-600 text-3xl font-bold pb-2 justify-end">
+                    <h2 className="text-red-600 md:text-3xl font-bold pb-2 justify-end">
                       00
                     </h2>
-                    <p className="text-gray-500 text-sm">INACTIVE</p>
+                    <p className="text-gray-500 text-xs sm:text-sm">INACTIVE</p>
                   </div>
                 </div>
               </div>
               <div className="flex-col bg-white rounded-xl w-full">
                 <div className="flex gap-4 border-b-2 border-gray px-5 py-5 items-center">
-                  <h1 className="text-lightGreen font-bold text-5xl">1347</h1>
+                  <h1 className="text-lightGreen font-bold md:text-5xl">1347</h1>
                   <p className="text-sm">Total Clients</p>
                 </div>
-                <div className="flex gap-20 px-5 py-4">
+                <div className="flex justify-between px-5 py-4">
                   <div className="flex-col">
-                    <h2 className="text-blue-800 text-3xl font-bold pb-2">
+                    <h2 className="text-blue-800 md:text-3xl font-bold pb-2">
                       1346
                     </h2>
-                    <p className="text-gray-500 text-sm">ACTIVE</p>
+                    <p className="text-gray-500 text-xs sm:text-sm">ACTIVE</p>
                   </div>
                   <div className="flex flex-col items-end">
-                    <h2 className="text-red-600 text-3xl font-bold pb-2 justify-end">
+                    <h2 className="text-red-600 md:text-3xl font-bold pb-2 justify-end">
                       01
                     </h2>
-                    <p className="text-gray-500 text-sm">INACTIVE</p>
+                    <p className="text-gray-500 text-xs sm:text-sm">INACTIVE</p>
                   </div>
                 </div>
               </div>
               <div className="flex-col bg-white rounded-xl w-full">
                 <div className="flex gap-4 border-b-2 border-gray px-5 py-5 items-center">
-                  <h1 className="text-lightGreen font-bold text-5xl">13</h1>
+                  <h1 className="text-lightGreen font-bold md:text-5xl">13</h1>
                   <p className="text-sm">Total Leads</p>
                 </div>
-                <div className="flex gap-20 px-5 py-4">
+                <div className="flex justify-between px-5 py-4">
                   <div className="flex-col">
-                    <h2 className="text-blue-800 text-3xl font-bold pb-2">
+                    <h2 className="text-blue-800 md:text-3xl font-bold pb-2">
                       13
                     </h2>
-                    <p className="text-gray-500 text-sm">ACTIVE</p>
+                    <p className="text-gray-500 text-xs sm:text-sm">ACTIVE</p>
                   </div>
                   <div className="flex flex-col items-end">
-                    <h2 className="text-red-600 text-3xl font-bold pb-2 justify-end">
+                    <h2 className="text-red-600 md:text-3xl font-bold pb-2 justify-end">
                       00
                     </h2>
-                    <p className="text-gray-500 text-sm">INACTIVE</p>
+                    <p className="text-gray-500 text-xs sm:text-sm">INACTIVE</p>
                   </div>
                 </div>
               </div>
@@ -104,18 +104,18 @@ const Home = () => {
               <img
                 src={advisorSettings}
                 alt="advisor settings"
-                className="w-20"
+                className="xs:w-20 w-16"
               />
-              <h2 className="font-semibold">Advisor Settings</h2>
+              <h2 className="font-semibold text-sm xs:text-md">Advisor Settings</h2>
             </div>
             <div className="flex h-1/3 w-full gap-4">
               <div className="flex flex-col w-full bg-white rounded-xl items-center justify-center gap-2">
                 <img src={organizations} alt="organizations" className="w-20" />
-                <h2 className="font-semibold">Organizations</h2>
+                <h2 className="font-semibold text-sm xs:text-md">Organizations</h2>
               </div>
               <div className="flex flex-col w-full bg-white rounded-xl items-center justify-center gap-2">
                 <img src={promoCodes} alt="Promo Codes" className="w-20" />
-                <h2 className="font-semibold">Promo Codes</h2>
+                <h2 className="font-semibold text-sm xs:text-md">Promo Codes</h2>
               </div>
               <div className="flex flex-col w-full bg-white rounded-xl items-center justify-center gap-2">
                 <img
@@ -123,7 +123,7 @@ const Home = () => {
                   alt="Word Templates"
                   className="h-20 w-20"
                 />
-                <h2 className="font-semibold">Word Templates</h2>
+                <h2 className="font-semibold text-sm xs:text-md text-center">Word Templates</h2>
               </div>
               <div className="flex flex-col w-full bg-white rounded-xl items-center justify-center gap-2">
                 <img
@@ -131,11 +131,11 @@ const Home = () => {
                   alt="Superannuation"
                   className="w-20"
                 />
-                <h2 className="font-semibold">Superannuation</h2>
+                <h2 className="font-semibold text-sm xs:text-md">Superannuation</h2>
               </div>
             </div>
           </div>
-          <div className="flex flex-col w-1/4 pl-4 gap-4">
+          <div className="flex flex-col md:w-1/4 md:pl-4 gap-4">
             <div className="h-2/3">
               <Calendar
                 prevLabel={<span>&lt;</span>}

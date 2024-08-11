@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { FaRegBell, FaBars } from "react-icons/fa";
 import { IoSettingsOutline } from "react-icons/io5";
 import profileImg from "../assets/profile.jpeg";
-import Sidemenu from "../components/Sidemenu"; // Assuming Sidemenu is imported here
 
 const Header = () => {
   const [isSidemenuOpen, setIsSidemenuOpen] = useState(false);
