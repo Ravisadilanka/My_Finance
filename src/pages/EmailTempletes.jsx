@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import Sidemenu from "../components/Sidemenu";
 import Header from "../components/Header";
 import { IoArrowBackCircleOutline } from "react-icons/io5";
 import { TfiEmail } from "react-icons/tfi";
 import { MdOutlinePreview } from "react-icons/md";
 import { TbEdit } from "react-icons/tb";
+import { FaBars } from "react-icons/fa";
 
 const templates = [
   { id: 1, name: "Forgot Password - Client Portal" },
@@ -13,13 +14,30 @@ const templates = [
   { id: 4, name: "Forgot Password - Advisor Portal" },
 ];
 
+
+
 const EmailTempletes = () => {
+  const [isSidemenuOpen, setIsSidemenuOpen] = useState(true);
+
+  function toggleSidemenu() {
+    setIsSidemenuOpen(!isSidemenuOpen);
+  }
+
   return (
     <div className="flex flex-col h-screen">
-      <Header />
-      <div className="flex h-screen">
-        <Sidemenu />
-        <div className="flex flex-col w-full h-full bg-lightBlue p-5 gap-5">
+      <div className="md:block flex items-center justify-between px-5">
+        <div className="block md:hidden">
+          <button onClick={toggleSidemenu}>
+            <FaBars className="text-md" />
+          </button>
+        </div>
+        <Header />
+      </div>
+      <div className="md:flex">
+        <div className={isSidemenuOpen ? "hidden md:block" : ""}>
+          <Sidemenu />
+        </div>
+        <div className={isSidemenuOpen ? "flex flex-col w-full h-full bg-lightBlue p-5 gap-5" : "hidden md:block"}>
           <div className="bg-white flex justify-between p-5 rounded-xl items-center">
             <h1 className="text-lg font-bold">Email Templates</h1>
             <button className="flex gap-3 items-center border-2 border-lightBlue py-1 px-2 rounded-lg">
@@ -38,16 +56,16 @@ const EmailTempletes = () => {
               {templates.map((template) => (
                 <div
                   key={template.id}
-                  className="flex grid grid-cols-3 items-center border-2 border-gray-300 p-4 rounded-xl"
+                  className="grid grid-cols-3 items-center border-2 border-gray-300 p-4 rounded-xl"
                 >
                   <div className="flex gap-4 items-center">
                     <TfiEmail className="text-darkBlue w-5 h-5 rounded-md" />
-                    <p className="text-sm text-gray-500 font-bold">
+                    <p className="md:text-sm text-gray-500 font-bold text-xs">
                       {template.name}
                     </p>
                   </div>
                   <div className="flex justify-center">
-                    <p className="text-sm text-gray-500">11th July 2024</p>
+                    <p className="md:text-sm text-xs text-gray-500">11th July 2024</p>
                   </div>
                   <div className="flex gap-4 items-center justify-end">
                     <button>
