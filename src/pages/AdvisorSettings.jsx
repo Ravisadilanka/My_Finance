@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../components/Header";
 import Sidemenu from "../components/Sidemenu";
 import { IoMdMore } from "react-icons/io";
+import { FaBars } from "react-icons/fa";
 
 const AdvisorSettings = () => {
   const financialDatas = [
@@ -16,13 +17,28 @@ const AdvisorSettings = () => {
     { id: 9, Year: "2016/2017" },
     { id: 10, Year: "2015/2016" },
   ];
+  const [isSidemenuOpen, setIsSidemenuOpen] = useState(true);
+
+  function toggleSidemenu() {
+    setIsSidemenuOpen(!isSidemenuOpen);
+  }
+
 
   return (
-    <div className="flex flex-col">
-      <Header />
-      <div className="flex h-screen">
-        <Sidemenu />
-        <div className="flex flex-col px-5 pb-5 bg-lightBlue w-full gap-4">
+    <div className="flex-col">
+      <div className="md:block flex items-center justify-between px-5">
+        <div className="block md:hidden">
+          <button onClick={toggleSidemenu}>
+            <FaBars className="text-md" />
+          </button>
+        </div>
+        <Header />
+      </div>
+      <div className="md:flex">
+        <div className={isSidemenuOpen ? "hidden md:block" : ""}>
+          <Sidemenu />
+        </div>
+        <div className={isSidemenuOpen ? "flex flex-col px-5 pb-5 bg-lightBlue w-full gap-4" : "hidden md:block"}>
           <div className="bg-white flex text-sm gap-4 pl-4 pb-4 pr-4 rounded-bl-xl rounded-br-xl">
             <button className="bg-buttonBlue text-white p-2 rounded-md">Individual Tax Settings</button>
             <button className="bg-lightBlue text-gray-500 p-2 rounded-md">Company Tax Settings</button>
@@ -31,7 +47,7 @@ const AdvisorSettings = () => {
             <div className="flex justify-end">
               <button className="bg-buttonBlue text-white py-2 text-sm rounded-md px-10">Add New Tax</button>
             </div>
-            <div className="grid grid-cols-3 gap-4 w-full h-full">
+            <div className="md:grid md:grid-cols-3 md:gap-4 md:w-full md:h-full flex flex-col gap-4">
               {financialDatas.map((financialData) => (
                 <div key={financialData.id} className="flex flex-col bg-lightBlue text-darkBlue rounded-xl p-5 gap-7">
                   <div className="flex justify-between items-center">
